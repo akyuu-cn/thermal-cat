@@ -43,6 +43,8 @@ if (screen.width >= 768) {
 // 初始化看板娘会自动加载指定目录下的 waifu-tips.json
 
 console.log(`
+live2d-widget loaded!
+
   く__,.ヘヽ.        /  ,ー､ 〉
            ＼ ', !-─‐-i  /  /´
            ／｀ｰ'       L/／｀ヽ､
