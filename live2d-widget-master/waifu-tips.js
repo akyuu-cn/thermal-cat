@@ -43,7 +43,7 @@ function loadWidget(config) {
 	let userAction = false,
 		userActionTimer,
 		messageTimer,
-		messageArray = ["好久不见，日子过得好快呢……", "大坏蛋！你都多久没理人家了呀，嘤嘤嘤～", "嗨～快来逗我玩吧！", "拿小拳拳锤你胸口！", "记得把小家加入 Adblock 白名单哦！"];
+		messageArray = ["你被摆烂猫猫盯上了！接下来的24小时你会持续摆烂！", "好久不见，日子过得好快呢……", "大坏蛋！你都多久没理人家了呀，嘤嘤嘤～", "嗨～快来逗我玩吧！", "拿小拳拳锤你胸口！", "记得把小家加入 Adblock 白名单哦！"];
 	window.addEventListener("mousemove", () => userAction = true);
 	window.addEventListener("keydown", () => userAction = true);
 	setInterval(() => {
@@ -53,7 +53,7 @@ function loadWidget(config) {
 			userActionTimer = null;
 		} else if (!userActionTimer) {
 			userActionTimer = setInterval(() => {
-				showMessage(randomSelection(messageArray), 6000, 9);
+				showMessage(randomSelection(messageArray), 6000, 8);
 			}, 20000);
 		}
 	}, 1000);
@@ -89,7 +89,7 @@ function loadWidget(config) {
 				document.getElementById("waifu-toggle").classList.add("waifu-toggle-active");
 			}, 3000);
 		});
-		const devtools = () => {};
+		const devtools = () => { };
 		console.log("%c", devtools);
 		devtools.toString = () => {
 			showMessage("哈哈，你打开了控制台，是想要看看我的小秘密吗？", 6000, 9);
@@ -105,20 +105,23 @@ function loadWidget(config) {
 
 	(function welcomeMessage() {
 		let text;
+		let pr = 8;
 		if (location.pathname === "/") { // 如果是主页
+			pr = 9;
 			const weekdate = new Date().getDay()
 			const now = new Date().getHours();
 			if (weekdate == 4) { // KFC 疯狂星期四 meme
 				text = [
-				"今日はKFC狂乱木曜日，支付宝転我50，慰撫我支離滅裂的心",
-				"最讨厌网络乞丐了，想吃星期四疯狂肯德基的不会自己买吗，什么都伸手要，觉得我说的对的请给我也点一份。",
-				"我本是显赫世家的少爷，却被诡计多端的管家所害!家人弃我!师门逐我!甚至断我灵脉!重来一生，今天肯德基疯狂星期四!谁请我吃？",
-				"我是盗号的，我把热力图的号盗了，但是我看了这个人的聊天记录跟微博，发现她过得非常艰苦，她的吃住一直很烂，，我看到大家的生活都很富足，我希望有人看见了能救济她一下， 请她吃一顿肯德基疯狂星期四，就这样吧，眼眶都湿润了，我下了。",
-				"大家好，我是b站董事长陈睿。我其实被李副ceo架空了，现在正在天桥底下啃咸菜。但我早就预料到她有反心，在那之前就把我无数忠诚的部下还有二次元们埋入了公司各个层面，现在只需要v我50，请他们吃一顿疯狂星期四，就可以重新启动他们夺回公司大权，让b站重回二次元怀抱，到时候，直接认命你为b站格拉摩根分部总裁，再送你一万年大会员。",
-				"肯德基到底到了你们多少钱，每个星期四都要在朋友圈和裙里问KFC疯狂星期四有无，还每个星期都编新的段子，我就不信肯德基有这么大的魔力，转我五十，我今天亲自去肯德基看看",
-				"你好，我是奥特曼，我正在外星和敌人战斗！没有能量了！听说今天肯德基疯狂星期四，我现在需要有人给我带9.9块钱2个的吮指原味鸡补充能量。恢复后我请你来外星做客。",
-				"今日是狂気の木曜日、好兄弟ｖ我５０救い我の腹、ＫＦＣ飽喰、感じ温暖、我、感謝！！"
-			];			
+					"今日はKFC狂乱木曜日，支付宝転我50，慰撫我支離滅裂的心",
+					"最讨厌网络乞丐了，想吃星期四疯狂肯德基的不会自己买吗，什么都伸手要，觉得我说的对的请给我也点一份。",
+					"我本是显赫世家的少爷，却被诡计多端的管家所害!家人弃我!师门逐我!甚至断我灵脉!重来一生，今天肯德基疯狂星期四!谁请我吃？",
+					"我是盗号的，我把热力图的号盗了，但是我看了这个人的聊天记录跟微博，发现她过得非常艰苦，她的吃住一直很烂，，我看到大家的生活都很富足，我希望有人看见了能救济她一下， 请她吃一顿肯德基疯狂星期四，就这样吧，眼眶都湿润了，我下了。",
+					"大家好，我是b站董事长陈睿。我其实被李副ceo架空了，现在正在天桥底下啃咸菜。但我早就预料到她有反心，在那之前就把我无数忠诚的部下还有二次元们埋入了公司各个层面，现在只需要v我50，请他们吃一顿疯狂星期四，就可以重新启动他们夺回公司大权，让b站重回二次元怀抱，到时候，直接认命你为b站格拉摩根分部总裁，再送你一万年大会员。",
+					"肯德基到底到了你们多少钱，每个星期四都要在朋友圈和裙里问KFC疯狂星期四有无，还每个星期都编新的段子，我就不信肯德基有这么大的魔力，转我五十，我今天亲自去肯德基看看",
+					"你好，我是奥特曼，我正在外星和敌人战斗！没有能量了！听说今天肯德基疯狂星期四，我现在需要有人给我带9.9块钱2个的吮指原味鸡补充能量。恢复后我请你来外星做客。",
+					"今日是狂気の木曜日、好兄弟ｖ我５０救い我の腹、ＫＦＣ飽喰、感じ温暖、我、感謝！！",
+					"cn.com.kfc.exception.MoneyNotEnoughException: KFC Crazy Thursday need 50 yuan."
+				];
 			}
 			else if (now > 5 && now <= 7) text = "早上好！一日之计在于晨，美好的一天就要开始了。";
 			else if (now > 7 && now <= 11) text = "上午好！工作顺利嘛，不要久坐，多起来走动走动哦！";
@@ -128,7 +131,15 @@ function loadWidget(config) {
 			else if (now > 19 && now <= 21) text = "晚上好，今天过得怎么样？";
 			else if (now > 21 && now <= 23) text = ["已经这么晚了呀，早点休息吧，晚安～", "深夜时要爱护眼睛呀！"];
 			else text = "你是夜猫子呀？这么晚还不睡觉，明天起的来嘛？";
-			} 
+		}
+		else if (document.title.split(" - ")[0] == 404) {
+			pr = 9
+			text = "？我没吃，别造谣，不是我";
+		}
+		else if (document.title.split(" - ")[0] == "RLt") {
+			pr = 9
+			text = "热力图哦";
+		}
 		else if (document.referrer !== "") {
 			const referrer = new URL(document.referrer),
 				domain = referrer.hostname.split(".")[1];
@@ -137,14 +148,11 @@ function loadWidget(config) {
 			else if (domain === "so") text = `Hello！来自 360搜索 的朋友<br>你是搜索 <span>${referrer.search.split("&q=")[1].split("&")[0]}</span> 找到的我吗？`;
 			else if (domain === "google") text = `Hello！来自 谷歌搜索 的朋友<br>欢迎阅读<span>「${document.title.split(" - ")[0]}」</span>`;
 			else text = `Hello！来自 <span>${referrer.hostname}</span> 的朋友`;
-		 }
-		 else if (document.title.split(" - ")[0] == 404) {
-			text = "？我没吃，别造谣，不是我";
-		 }
-		 else {
+		}
+		else {
 			text = `欢迎阅读<span>「${document.title.split(" - ")[0]}」</span>`;
 		}
-		showMessage(text, 7000, 8);
+		showMessage(text, 7000, pr);
 	})();
 
 	function showHitokoto() {
@@ -155,7 +163,7 @@ function loadWidget(config) {
 				const text = `这句一言来自 <span>「${result.from}」</span>，是 <span>${result.creator}</span> 在 hitokoto.cn 投稿的。`;
 				showMessage(result.hitokoto, 6000, 9);
 				setTimeout(() => {
-					showMessage(text, 4000, 9);
+					showMessage(text, 4000, 8);
 				}, 6000);
 			});
 	}
@@ -170,7 +178,10 @@ function loadWidget(config) {
 		sessionStorage.setItem("waifu-text", priority);
 		const tips = document.getElementById("waifu-tips");
 		tips.innerHTML = text;
-		tips.style.margin = "-" + (50+(Math.trunc((text.length-1)/15))*20) + "px 20px"; // 根据文本长度调整对话框位置
+
+		var tips_height = document.getElementById("waifu-tips")
+		tips.style.margin = "-" + (10 + tips_height.offsetHeight) + "px 20px"; // 根据文本长度调整对话框位置
+
 		tips.classList.add("waifu-tips-active");
 		messageTimer = setTimeout(() => {
 			sessionStorage.removeItem("waifu-text");

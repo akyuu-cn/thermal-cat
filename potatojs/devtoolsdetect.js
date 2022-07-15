@@ -1,3 +1,8 @@
+
+//
+// 热力猫 DevTools 检测
+//
+
 import devtools from '/resources/potato/is/life/js/devtools.js';
 
 let messageTimer
@@ -5,7 +10,7 @@ let messageTimer
 window.addEventListener('devtoolschange', event => {
     if(event.detail.isOpen){
     showMessage("哈哈，你打开了控制台，是想要看看我的小秘密吗？", 6000, 9);
-    }
+    } 
 });
 
 function showMessage(text, timeout, priority) {
