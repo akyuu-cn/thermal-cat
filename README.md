@@ -1,4 +1,4 @@
-# thermal-cat
+# thermal-cat / 热力猫
 Thermal Cat Live2D (hijiki&amp;tororo) for EF :D
 ## Original work
 https://github.com/stevenjoezhang/live2d-widget
@@ -7,3 +7,4 @@ https://github.com/stevenjoezhang/live2d-widget
  - 魔改对话
  - 加入对话框位置自动调整
  - KFC疯狂星期四v我50
+ - 修复 devtools 检测
