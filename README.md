@@ -1,4 +1,4 @@
-# thermal-cat
+# thermal-cat / 热力猫
 Thermal Cat Live2D (hijiki&amp;tororo) for EF :D
 ## Original work
 https://github.com/stevenjoezhang/live2d-widget
